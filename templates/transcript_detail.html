@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transcript Detail</title>
+</head>
+<body>
+<h1>Transcript Detail</h1>
+<p>Transcript ID: {{ transcript.transcript_id }}</p>
+<p>Filename: {{ transcript.filename }}</p>
+<p>Status: {{ transcript.status }}</p>
+<object data="{{ transcript_pdf.media_link }}" type="application/pdf" width="100%" height="100%">
+<p>It appears you don't have a PDF plugin for this browser.
+No biggie... you can <a href="{{ transcript_pdf.media_link }}">click here to
+download the PDF file.</a></p>
+</object>
+<br>
+<form action="/update-transcript/{{ transcript.transcript_id }}" method="POST">
+<select name="status">
+<option value="pending">Pending</option>
+<option value="reviewed">Reviewed</option>
+<option value="approved">Approved</option>
+<option value="need_additional_information">Need Additional Information</option>
+</select>
+<input type="submit" value="Update">
+</form>
+</body>
+</html>
+
