@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transcripts</title>
+</head>
+<body>
+<h1>Transcripts</h1>
+<ul>
+{% for transcript in transcripts %}
+<li>{{ transcript.transcript_id }} - {{ transcript.filename }} - {{ transcript.status }}
+<a href="/transcript-detail/{{ transcript.transcript_id }}">View</a>
+</li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
+
